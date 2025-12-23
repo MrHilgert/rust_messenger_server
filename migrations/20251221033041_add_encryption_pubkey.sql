@@ -1,0 +1,6 @@
+ALTER TABLE users ADD COLUMN encryption_pubkey BYTEA;
+
+UPDATE users SET encryption_pubkey = '\x0000000000000000000000000000000000000000000000000000000000000000'::bytea
+WHERE encryption_pubkey IS NULL;
+
+ALTER TABLE users ALTER COLUMN encryption_pubkey SET NOT NULL;

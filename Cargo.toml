@@ -1,0 +1,18 @@
+[package]
+name = "hnet_server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hnet_protocol = { path = "../hnet_protocol" }
+tokio = {version = "1.48.0", features = ["full"]}
+sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "postgres", "chrono", "migrate"] }
+chrono = "0.4.42"
+rand = "0.8.5"
+ed25519-dalek = "3.0.0-pre.3"
+dotenvy = "0.15.7"
+hex = "0.4.3"
+colored = "3.0.0"
+tokio-util = "0.7.17"
+lrumap = "0.1.0"
+dashmap = "7.0.0-rc2"
